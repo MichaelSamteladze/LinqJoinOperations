@@ -49,7 +49,7 @@ namespace LinqJoinOperations
             #endregion
         }
 
-        List<ResultItem> InnerJoinSample(List<Category> Categories, List<Product> Products)
+        public List<ResultItem> InnerJoinSample(List<Category> Categories, List<Product> Products)
         {
             var Query =
                 from P in Products
@@ -76,7 +76,7 @@ namespace LinqJoinOperations
             return Lambda.ToList();
         }
 
-        List<ResultItem> LeftJoinSample(List<Category> Categories, List<Product> Products)
+        public List<ResultItem> LeftJoinSample(List<Category> Categories, List<Product> Products)
         {
             var Query = 
                 from P in Products
@@ -109,7 +109,7 @@ namespace LinqJoinOperations
             return Lambda.ToList();
         }
 
-        List<ResultItem> RightJoinSample(List<Category> Categories, List<Product> Products)
+        public List<ResultItem> RightJoinSample(List<Category> Categories, List<Product> Products)
         {
             var Query =
                 from C in Categories
@@ -142,7 +142,7 @@ namespace LinqJoinOperations
             return Lambda.ToList();
         }
 
-        List<ResultItem> FullJoinSample(List<Category> Categories, List<Product> Products)
+        public List<ResultItem> FullJoinSample(List<Category> Categories, List<Product> Products)
         {
             var Left = LeftJoinSample(Categories, Products);
             var Right = RightJoinSample(Categories, Products);
@@ -150,7 +150,7 @@ namespace LinqJoinOperations
             return Full.ToList();            
         }
 
-        List<CrossJoinResultItem> CrossJoinSample()
+        public List<CrossJoinResultItem> CrossJoinSample()
         {
             var Collection1 = new List<int> { 1, 2, 3 };
             var Collection2 = new List<int> { 4, 5, 6 };
